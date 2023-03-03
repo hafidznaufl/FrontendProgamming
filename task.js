@@ -21,7 +21,7 @@ const users = [
     major: "Bussiness Digital",
   },
   {
-    name: "Hafidz",
+    name: "Hafidzz",
     age: 21,
     major: "Technique Informatics",
   },
