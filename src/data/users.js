@@ -32,3 +32,5 @@ const users = [
  * Gunakan export default.
  */
 // CODE HERE
+
+export default users;

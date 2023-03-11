@@ -4,13 +4,18 @@
  * dari file controllers/UserController.js
  */
 // CODE HERE
+import {
+  formatUser,
+  findByName,
+  filterByMajor,
+} from "./controllers/UserController.js";
 
 /**
  * Fungsi Main.
  * Jangan edit atau hapus fungsi main.
  * Fungsi main untuk testing aplikasi.
  */
-(async () => {
+const main = async () => {
   console.log("# Format User: Mr/Mrs");
   const resultFormatUsers = await formatUser("Mr/Mrs");
   console.log(resultFormatUsers);
@@ -22,4 +27,6 @@
   console.log("\n# Filter User by Major: English");
   const resultFilterByMajor = await filterByMajor("English");
   console.log(resultFilterByMajor);
-})();
+}
+
+main();
