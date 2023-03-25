@@ -1,0 +1,38 @@
+/* Small Screen */
+.container {
+    background-color: #4361ee;
+    color: #fff;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  .footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+  }
+  .footer__title {
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .footer__author {
+    font-size: 1rem;
+  }
+  
+  /* Medium Screen */
+  @media (min-width: 768px) {
+    /*
+     * Nothing TODO here.
+     * We dont change styling footer. 
+     */
+  }
+  
+  /* Large Screen */
+  @media (min-width: 992px) {
+    /*
+     * Nothing TODO here.
+     * We dont change styling footer. 
+     */
+  }
