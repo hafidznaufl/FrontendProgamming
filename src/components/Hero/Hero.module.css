@@ -66,12 +66,13 @@
       align-items: center;
       text-align: left;
     }
+    
+    .hero__right {
+      flex-basis: 60%;
+    }
   
     .hero__left {
       flex-basis: 40%;
     }
   
-    .hero__right {
-      flex-basis: 60%;
-    }
   }
