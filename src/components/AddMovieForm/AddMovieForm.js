@@ -83,6 +83,7 @@ const AddMovieForm = (props) => {
             {isDateError && <p>Date tidak boleh kosong</p>}
             <label htmlFor="">Choose a Type:</label>
             <select value={type} onChange={handleType}>
+              <option value=""></option>
               <option value="movie">Movie</option>
               <option value="series">Series</option>
             </select>
