@@ -39,6 +39,14 @@ input{
     margin-top: 0.4rem;
 }
 
+select{
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding-top: 20px;
+    box-sizing: box;
+    margin-top: 0.4rem;
+}
+
 label{
     margin-top: 0.4rem; 
 }
@@ -68,7 +76,7 @@ button{
   .form {
     margin: 0 1rem;
     flex-direction: row;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
   }

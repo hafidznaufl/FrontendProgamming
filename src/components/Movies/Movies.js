@@ -1,10 +1,9 @@
 import MovieCard from "./MovieCard";
 import styles from "./Movies.module.css";
-import { data } from "../../utils/constants/data";
-import { useState } from "react";
 import { nanoid } from "nanoid";
-const Movies = () => {
-  const [movies, setmovie] = useState(data);
+
+const Movies = (props) => {
+  const {movies, setMovie } = props
 
   const AddMovie = () => {
     const movie = {
@@ -15,7 +14,7 @@ const Movies = () => {
       poster: "https://picsum.photos/300/400",
     };
 
-    setmovie([...movies, movie]);
+    setMovie([...movies, movie]);
   };
 
   return (

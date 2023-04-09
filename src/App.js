@@ -1,16 +1,12 @@
-import AddMovieForm from "./components/AddMovieForm/AddMovieForm";
 import Footer from "./components/Footer/Footer";
-import Hero from "./components/Hero/Hero";
-import Movies from "./components/Movies/Movies";
+import Main from "./components/Main";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Hero />
-      <Movies />
-      <AddMovieForm />
+      <Main />
       <Footer />
     </div>
   );
