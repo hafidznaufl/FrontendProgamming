@@ -10,10 +10,17 @@ const AddMovieForm = (props) => {
   const [type, setType] = useState("");
   const [poster, setPoster] = useState("");
 
-  const [isTitleError, setIsTitleError] = useState(false);
-  const [isDateError, setIsDateError] = useState(false);
-  const [isTypeError, setIsTypeError] = useState(false);
-  const [isPosterError, setIsPosterError] = useState(false);
+  // const [isTitleError, setIsTitleError] = useState(false);
+  // const [isDateError, setIsDateError] = useState(false);
+  // const [isTypeError, setIsTypeError] = useState(false);
+  // const [isPosterError, setIsPosterError] = useState(false);
+
+  const [error, setError] = useState({
+    title: false,
+    date: false,
+    type: false,
+    poster: false
+  })
 
   const handleTitle = (e) => setTitle(e.target.value);
   const handleDate = (e) => setDate(e.target.value);
@@ -24,25 +31,13 @@ const AddMovieForm = (props) => {
     e.preventDefault();
 
     if (title === "") {
-      setIsTitleError(true);
-      setIsDateError(false);
-      setIsTypeError(false);
-      setIsPosterError(false);
+      setError({...error, title: true, date: false, type: false, poster: false})
     } else if (date === "") {
-      setIsTitleError(false);
-      setIsDateError(true);
-      setIsTypeError(false);
-      setIsPosterError(false);
+      setError({...error, title: false, date: true, type: false, poster: false})
     } else if (type === "") {
-      setIsTitleError(false);
-      setIsDateError(false);
-      setIsTypeError(true);
-      setIsPosterError(false);
+      setError({...error, title: false, date: false, type: true, poster: false})
     } else if (poster === "") {
-      setIsTitleError(false);
-      setIsDateError(false);
-      setIsTypeError(false);
-      setIsPosterError(true);
+      setError({...error, title: false, date: false, type: false, poster: true})
     } else {
       const movie = {
         id: nanoid(4),
@@ -53,8 +48,7 @@ const AddMovieForm = (props) => {
       };
 
       setMovie([...movies, movie]);
-      setIsTitleError(false);
-      setIsDateError(false);
+      setError({...error, title: false, date: false, type: false, poster: false})
     }
   };
 
@@ -77,20 +71,20 @@ const AddMovieForm = (props) => {
           >
             <label htmlFor="">Title</label>
             <input type="text" value={title} onChange={handleTitle} />
-            {isTitleError && <p>Title tidak boleh kosong</p>}
+            {error.title && <p>Title tidak boleh kosong</p>}
             <label htmlFor="">Date</label>
             <input type="text" value={date} onChange={handleDate} />
-            {isDateError && <p>Date tidak boleh kosong</p>}
+            {error.date && <p>Date tidak boleh kosong</p>}
             <label htmlFor="">Choose a Type:</label>
             <select value={type} onChange={handleType}>
               <option value=""></option>
               <option value="movie">Movie</option>
               <option value="series">Series</option>
             </select>
-            {isTypeError && <p>Type tidak boleh kosong</p>}
+            {error.type && <p>Type tidak boleh kosong</p>}
             <label htmlFor="">Poster</label>
             <input type="text" value={poster} onChange={handlePoster} />
-            {isPosterError && <p>Poster tidak boleh kosong</p>}
+            {error.poster && <p>Poster tidak boleh kosong</p>}
 
             <button>Add Movie</button>
           </form>

@@ -1,7 +1,11 @@
+import Main from "../components/Main";
+
 const Home = () => {
-    return ( 
-        <div>Halaman Home</div>
-     );
-}
- 
+  return (
+    <div>
+      <Main />
+    </div>
+  );
+};
+
 export default Home;
