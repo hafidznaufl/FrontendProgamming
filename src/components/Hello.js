@@ -1,10 +1,20 @@
-const Hello = (props) => {
-  const { name, role } = props;
+import { useEffect, useState } from "react";
+
+const Hello = () => {
+  const [angka, setAngka] = useState(0);
+  const [nama, setNama] = useState('')
+
+  useEffect(() => {
+    document.title = angka;
+
+  }, [angka]);
 
   return (
     <div>
-      <h2>Welcome React</h2>
-      <p>Saya {name} - {role}</p>
+      <p>Nilai: {angka}</p>
+      <button onClick={() => setAngka(angka + 1)}>Add</button>
+      <p>Nama : {nama}</p>
+      <button onClick={() => setNama('Naufal')}>Nama</button>
     </div>
   );
 };

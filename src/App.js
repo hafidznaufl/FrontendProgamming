@@ -5,6 +5,7 @@ import Popular from "./pages/movies/Popular";
 import NowPlaying from "./pages/movies/NowPlaying";
 import TopRated from "./pages/movies/TopRated";
 import Layout from "./Layout";
+// import Hello from "./components/Hello";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           <Route path="/movie/top" element={<TopRated />}></Route>
         </Routes>
       </Layout>
+
+      {/* <Hello /> */}
       {/* <Navbar />
       <Main />
       <Footer /> */}
