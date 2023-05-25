@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./AddMovieForm.module.css";
 import { nanoid } from "nanoid";
+import Button from "../ui/Button";
 
 const AddMovieForm = (props) => {
   const { movies, setMovie } = props;
@@ -86,7 +87,7 @@ const AddMovieForm = (props) => {
             <input type="text" value={poster} onChange={handlePoster} />
             {error.poster && <p>Poster tidak boleh kosong</p>}
 
-            <button>Add Movie</button>
+            <Button full>Add Movie</Button>
           </form>
         </div>
       </section>
