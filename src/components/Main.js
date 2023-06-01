@@ -5,13 +5,13 @@ import { data } from "../utils/constants/data"
 import { useState } from "react";
 
 const Main = () => {
-  const [movies, setmovie] = useState(data);
+  const [movies, setMovies] = useState(data);
 
   return (
     <div>
       <Hero />
-      <Movies movies = {movies} setMovie = {setmovie}/>
-      <AddMovieForm movies = {movies} setMovie = {setmovie}/>
+      <Movies movies = {movies} setMovie = {setMovies}/>
+      <AddMovieForm movies = {movies} setMovie = {setMovies}/>
     </div>
   );
 };

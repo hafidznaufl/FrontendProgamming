@@ -36,6 +36,10 @@ const HeroStyle = styled.div`
     border-radius: 25px;
   }
 
+  a{
+    text-decoration: none;
+  }
+
   /* Medium Screen */
   @media (min-width: 768px) {
     /*

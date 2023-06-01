@@ -4,7 +4,7 @@ import styles from "./Movies.module.css";
 import { nanoid } from "nanoid";
 
 const Movies = (props) => {
-  const { movies, setMovie } = props;
+  const { movies, setMovies } = props;
 
   const AddMovie = () => {
     const movie = {
@@ -15,7 +15,7 @@ const Movies = (props) => {
       poster: "https://picsum.photos/300/400",
     };
 
-    setMovie([...movies, movie]);
+    setMovies([...movies, movie]);
   };
 
   return (
