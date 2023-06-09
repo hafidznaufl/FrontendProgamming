@@ -15,8 +15,6 @@ const Popular = () => {
 
   async function getPopularMovies() {
     const response = await axios(URL);
-
-    console.log(response.data.results);
     setMovies(response.data.results);
   }
 

@@ -1,4 +1,5 @@
 import styles from "./Movies.module.css";
+import { Link } from "react-router-dom";
 
 const MovieCard = (props) => {
   const { movie } = props;
@@ -7,12 +8,13 @@ const MovieCard = (props) => {
       <img
         className={styles.movie__image}
         src={
-          movie.poster ||
-          `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+          movie.poster || `https://image.tmdb.org/t/p/w500${movie.poster_path}`
         }
         alt="placeholder"
       />
-      <h3 className={styles.movie__title}>{movie.title}</h3>
+      <Link to={`/movie/${movie.id}`}>
+        <h3 className={styles.movie__title}>{movie.title}</h3>
+      </Link>
       <p className={styles.movie__date}>{movie.year || movie.release_date}</p>
     </div>
   );
