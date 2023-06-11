@@ -9,12 +9,12 @@ import Movies from "../../components/Movies/Movies";
 const Detail = () => {
   const { id } = useParams();
   const [movies, setMovies] = useState("");
-  const [recom, setRecom] = useState([])
+  const [recom, setRecom] = useState([]);
 
   useEffect(() => {
     getDetailMovie();
     getRecomMovie();
-  }, []);
+  }, [getDetailMovie, getRecomMovie]);
 
   async function getDetailMovie() {
     const response = await axios(ENDPOINTS.DETAIL(id));
@@ -58,7 +58,7 @@ const Detail = () => {
           </div>
         </section>
       </HeroStyle>
-      <Movies movies={recom} title="Recommendations Movie"/>
+      <Movies movies={recom} title="Recommendations Movie" />
     </>
   );
 };
