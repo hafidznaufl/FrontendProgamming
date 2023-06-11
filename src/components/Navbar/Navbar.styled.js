@@ -12,7 +12,6 @@ const NavbarStyle = styled.div`
 
   h1 {
     font-size: 1rem;
-    margin-bottom: 1rem;
   }
 
   ul {

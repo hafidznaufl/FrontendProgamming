@@ -10,8 +10,8 @@ const Main = () => {
   return (
     <div>
       <Hero />
-      <Movies movies = {movies} setMovie = {setMovies}/>
-      <AddMovieForm movies = {movies} setMovie = {setMovies}/>
+      <Movies movies = {movies} setMovie = {setMovies} title="Latest Movies"/>
+      <AddMovieForm movies = {movies} setMovie = {setMovies} />
     </div>
   );
 };

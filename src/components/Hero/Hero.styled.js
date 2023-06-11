@@ -27,7 +27,12 @@ const HeroStyle = styled.div`
 
   p {
     color: #64748b;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   img {
@@ -36,7 +41,7 @@ const HeroStyle = styled.div`
     border-radius: 25px;
   }
 
-  a{
+  a {
     text-decoration: none;
   }
 
@@ -50,8 +55,8 @@ const HeroStyle = styled.div`
 
   /* Large Screen */
   @media (min-width: 992px) {
-      max-width: 1200px;
-      margin: 3rem auto;
+    max-width: 1200px;
+    margin: 3rem auto;
 
     section {
       margin: 0 1rem;
@@ -71,4 +76,4 @@ const HeroStyle = styled.div`
   }
 `;
 
-export default HeroStyle
+export default HeroStyle;
