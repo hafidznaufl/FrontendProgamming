@@ -2,26 +2,25 @@ import { useState } from "react";
 import styles from "./AddMovieForm.module.css";
 import { nanoid } from "nanoid";
 import Button from "../ui/Button";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addMovie } from "../../features/movieSlice";
 
-const AddMovieForm = (props) => {
-  const { movies, setMovie } = props;
+const AddMovieForm = () => {
+  const navigation = useNavigate();
+  const dispatch = useDispatch();
 
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [type, setType] = useState("");
   const [poster, setPoster] = useState("");
 
-  // const [isTitleError, setIsTitleError] = useState(false);
-  // const [isDateError, setIsDateError] = useState(false);
-  // const [isTypeError, setIsTypeError] = useState(false);
-  // const [isPosterError, setIsPosterError] = useState(false);
-
   const [error, setError] = useState({
     title: false,
     date: false,
     type: false,
-    poster: false
-  })
+    poster: false,
+  });
 
   const handleTitle = (e) => setTitle(e.target.value);
   const handleDate = (e) => setDate(e.target.value);
@@ -32,13 +31,37 @@ const AddMovieForm = (props) => {
     e.preventDefault();
 
     if (title === "") {
-      setError({...error, title: true, date: false, type: false, poster: false})
+      setError({
+        ...error,
+        title: true,
+        date: false,
+        type: false,
+        poster: false,
+      });
     } else if (date === "") {
-      setError({...error, title: false, date: true, type: false, poster: false})
+      setError({
+        ...error,
+        title: false,
+        date: true,
+        type: false,
+        poster: false,
+      });
     } else if (type === "") {
-      setError({...error, title: false, date: false, type: true, poster: false})
+      setError({
+        ...error,
+        title: false,
+        date: false,
+        type: true,
+        poster: false,
+      });
     } else if (poster === "") {
-      setError({...error, title: false, date: false, type: false, poster: true})
+      setError({
+        ...error,
+        title: false,
+        date: false,
+        type: false,
+        poster: true,
+      });
     } else {
       const movie = {
         id: nanoid(4),
@@ -48,8 +71,15 @@ const AddMovieForm = (props) => {
         poster: poster,
       };
 
-      setMovie([...movies, movie]);
-      setError({...error, title: false, date: false, type: false, poster: false})
+      dispatch(addMovie(movie));
+      setError({
+        ...error,
+        title: false,
+        date: false,
+        type: false,
+        poster: false,
+      });
+      navigation("/");
     }
   };
 

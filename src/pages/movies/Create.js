@@ -1,8 +1,11 @@
+import AddMovieForm from "../../components/AddMovieForm/AddMovieForm";
+import Hero from "../../components/Hero/Hero";
 
 const Create = () => {
   return (
     <div>
-      CreateMovie
+      <Hero />
+      <AddMovieForm />
     </div>
   );
 };

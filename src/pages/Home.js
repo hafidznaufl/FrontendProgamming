@@ -1,9 +1,12 @@
-import Main from "../components/Main";
+import Hero from "../components/Hero/Hero";
+import Movies from "../components/Movies/Movies";
 
 const Home = () => {
+
   return (
     <div>
-      <Main />
+      <Hero />
+      <Movies title="Latest Movies" />
     </div>
   );
 };

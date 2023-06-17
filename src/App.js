@@ -8,7 +8,6 @@ import Layout from "./Layout";
 import { ThemeProvider } from "styled-components";
 import theme from "./utils/constants/theme";
 import Detail from "./pages/movies/Detail";
-// import Hello from "./components/Hello";
 
 function App() {
   return (
@@ -25,11 +24,6 @@ function App() {
           </Routes>
         </Layout>
       </ThemeProvider>
-
-      {/* <Hello /> */}
-      {/* <Navbar />
-      <Main />
-      <Footer /> */}
     </div>
   );
 }
